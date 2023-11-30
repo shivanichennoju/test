@@ -77,8 +77,53 @@ def AddEmp():
     finally:
         cursor.close()
 
-    print("all modification done...")
     return render_template('AddEmpOutput.html', name=emp_name)
+
+@app.route("/fetchdata", methods=['POST'])
+def fetch_data():
+    emp_id = request.form['emp_id']
+
+    if emp_id is None:
+        return "Please provide an employee ID for fetching data."
+
+    select_sql = "SELECT * FROM employee WHERE emp_id = %s"
+    cursor = db_conn.cursor()
+
+    try:
+        cursor.execute(select_sql, (emp_id,))
+        data = cursor.fetchone()
+
+        if data is None:
+            return f"No data found for employee ID {emp_id}"
+
+        emp_data = {
+            'id': data[0],
+            'fname': data[1],
+            'lname': data[2],
+            'interest': data[3],
+            'location': data[4],
+            'image_url': get_s3_image_url(emp_id),  
+        }
+
+        return render_template('GetEmpOutput.html', **emp_data)
+
+    except Exception as e:
+        return str(e)
+
+    finally:
+        cursor.close()
+
+def get_s3_image_url(emp_id):
+    s3_location = boto3.client('s3').get_bucket_location(Bucket=custombucket)
+    s3_location = s3_location.get('LocationConstraint', '')
+    s3_location = '' if s3_location is None else f"-{s3_location}"
+    image_key = f"emp-id-{emp_id}_image_file"
+    return f"https://s3{s3_location}.amazonaws.com/{custombucket}/{image_key}"
+
+@app.route("/getemp", methods=['GET'])
+def get_emp():
+    return render_template('GetEmp.html')
+
 
 
 if __name__ == '__main__':
