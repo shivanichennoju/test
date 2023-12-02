@@ -90,6 +90,7 @@ def fetch_data():
         if data is None:
             return f"No recipe named {recipe_name} was found"
 
+        recipe_id = data[0]
         recipe_data = {
             'recipe_id': data[0],
             'recipe_name': data[1],
