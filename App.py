@@ -52,7 +52,7 @@ def Add():
 
         try:
             s3.Bucket(bucket).put_object(Key=recipe_picture_url_name_in_s3, Body=recipe_picture_url)
-            buckt_loc = boto3.client('s3').get_buckt_loc(Bucket=bucket)
+            buckt_loc = boto3.client('s3').get_bucket_location(Bucket=bucket)
             loc_s3 = (buckt_loc['LocationConstraint'])
 
             if loc_s3 is None:
@@ -108,7 +108,7 @@ def fetch_data():
         cursor.close()
 
 def get_s3(recipe_id):
-    loc_s3 = boto3.client('s3').get_buckt_loc(Bucket=bucket)
+    loc_s3 = boto3.client('s3').get_bucket_location(Bucket=bucket)
     loc_s3 = loc_s3.get('LocationConstraint', '')
     loc_s3 = '' if loc_s3 is None else f"-{loc_s3}"
     image_key = f"emp-id-{recipe_id}_image_file"
