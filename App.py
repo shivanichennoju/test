@@ -112,7 +112,7 @@ def get_s3(recipe_id):
     loc_s3 = boto3.client('s3').get_bucket_location(Bucket=bucket)
     loc_s3 = loc_s3.get('LocationConstraint', '')
     loc_s3 = '' if loc_s3 is None else f"-{loc_s3}"
-    image_key = f"emp-id-{recipe_id}_image_file"
+    image_key = f"recipe-id-{recipe_id}_image_file"
     return f"https://s3{loc_s3}.amazonaws.com/{bucket}/{image_key}"
 
 @app.route("/getrecipe", methods=['GET'])
