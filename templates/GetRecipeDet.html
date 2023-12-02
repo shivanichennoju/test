@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Information</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa; /* Light gray background color */
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+
+        button {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form>
+            <h1 class="text-center text-dark">Recipe Information</h1>
+            <div class="form-group">
+                <label for="recipe_id">Recipe ID:</label>
+                <input type="text" class="form-control" id="recipe_id" value="{{ recipe_id }}" readonly>
+            </div>
+            <div class="form-group">
+                <label for="recipe_name">Recipe Name:</label>
+                <input type="text" class="form-control" id="recipe_name" value="{{ recipe_name }}" readonly>
+            </div>
+            <div class="form-group">
+                <label for="recipe_ingredients">Recipe Ingredients:</label>
+                <input type="text" class="form-control" id="recipe_ingredients" value="{{ recipe_ingredients }}" readonly>
+            </div>
+            <div class="form-group">
+                <label for="recipe_process">Recipe Process:</label>
+                <input type="text" class="form-control" id="recipe_process" value="{{ recipe_process }}" readonly>
+            </div>
+            <div class="form-group">
+                <label for="famous_in_place">Famous In Place:</label>
+                <input type="text" class="form-control" id="famous_in_place" value="{{ famous_in_place }}" readonly>
+            </div>
+            <div class="form-group">
+                <label for="recipe_picture_url">Image:</label>
+                <img src="{{ recipe_picture_url }}" alt="Recipe Image">
+            </div>
+            <button type="submit" class="btn btn-primary" formaction="/getrecipe">GO BACK</button>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

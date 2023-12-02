@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Recipes</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa; /* Light gray background color */
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="/retrieve" autocomplete="on" method="POST">
+            <h1 class="text-center text-dark">Recipe Info</h1>
+            <div class="form-group">
+                <label for="recipe_name">Recipe Name:</label>
+                <input type="text" class="form-control" id="recipe_name" name="recipe_name" autofocus>
+            </div>
+            <button type="submit" class="btn btn-primary">RETRIEVE RECIPE</button>
+            <input type="hidden" name="_method" value="GET">
+        </form>
+        <a class="btn btn-secondary mt-3" href="/">GO TO MAIN</a>
+        <a class="btn btn-secondary mt-3" href="/about">About Us</a>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

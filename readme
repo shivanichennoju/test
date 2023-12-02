@@ -1,13 +1,10 @@
+#To execute the application, install the following
 sudo apt-get update
-# For Sql-client
 sudo apt-get install mysql-client
-
-# For python and related frameworks
-
+#if python is not installed
 sudo apt-get install python3
 sudo apt-get install python3-flask
 sudo apt-get install python3-pymysql
 sudo apt-get install python3-boto3
-
-# for running application
-sudo python3 Empapp.py
+#run the application
+sudo python3 App.py
