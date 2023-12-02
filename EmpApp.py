@@ -86,7 +86,7 @@ def fetch_data():
     if emp_id is None:
         return "Please provide an employee ID for fetching data."
 
-    select_sql = "SELECT * FROM employee WHERE emp_id = %s"
+    select_sql = "SELECT * FROM employee WHERE empid = %s"
     cursor = db_conn.cursor()
 
     try:
