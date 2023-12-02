@@ -24,7 +24,7 @@ def Mainpage():
     return render_template('AddRecipe.html')
 
 
-@app.route("/about", methods=['POST'])
+@app.route("/about")
 def about():
     return render_template('About.html')
 
