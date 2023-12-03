@@ -7,7 +7,14 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <style>
         body {
-            background-color: #f8f9fa; 
+            background-color: #fde4e8;
+            background-image: url('https://img.freepik.com/premium-photo/frame-food-ingredients-with-baking-utensils-baby-pink-background_431906-560.jpg?w=1060');
+            background-size: cover;
+            background-blend-mode: multiply;
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
         }
 
         .container {
@@ -15,44 +22,85 @@
         }
 
         form {
-            background-color: white;
+            background-color: rgba(255, 255, 255, 0.9);
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #c2185b;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+
+        label {
+            color: #c2185b;
+            font-weight: bold;
+        }
+
+        input {
+            border-color: #c2185b;
         }
 
         button {
             margin-top: 20px;
+            background-color: #c2185b;
+            border-color: #c2185b;
+            color: #fff;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #ad1457;
+            border-color: #ad1457;
+        }
+
+        .btn-secondary {
+            background-color: #ffcdd2;
+            border-color: #ffcdd2;
+            color: #c2185b;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background-color: #ef9a9a;
+            border-color: #ef9a9a;
+            color: #c2185b;
+        }
+
+        .btn-secondary:not(:hover) {
+            color: #c2185b;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <form action="/addrecipe" autocomplete="on" method="POST" enctype="multipart/form-data">
-            <h1 class="text-center text-dark">ADD RECIPE</h1>
+            <h1 class="text-center">ADD RECIPE</h1>
             <div class="form-group">
                 <label for="recipe_id">Recipe ID:</label>
-                <input type="number" class="form-control" id="recipe_id" name="recipe_id" autofocus>
+                <input type="number" class="form-control" id="recipe_id" name="recipe_id" autofocus required>
             </div>
             <div class="form-group">
                 <label for="recipe_name">Recipe Name:</label>
-                <input type="text" class="form-control" id="recipe_name" name="recipe_name">
+                <input type="text" class="form-control" id="recipe_name" name="recipe_name" required>
             </div>
             <div class="form-group">
                 <label for="recipe_ingredients">Recipe Ingredients:</label>
-                <input type="text" class="form-control" id="recipe_ingredients" name="recipe_ingredients">
+                <input type="text" class="form-control" id="recipe_ingredients" name="recipe_ingredients" required>
             </div>
             <div class="form-group">
                 <label for="recipe_process">Recipe Process:</label>
-                <input type="text" class="form-control" id="recipe_process" name="recipe_process">
+                <input type="text" class="form-control" id="recipe_process" name="recipe_process" required>
             </div>
             <div class="form-group">
                 <label for="famous_in_place">Famous In Place:</label>
-                <input type="text" class="form-control" id="famous_in_place" name="famous_in_place">
+                <input type="text" class="form-control" id="famous_in_place" name="famous_in_place" required>
             </div>
             <div class="form-group">
                 <label for="recipe_picture_url">Recipe Image:</label>
-                <input type="file" class="form-control-file" name="recipe_picture_url">
+                <input type="file" class="form-control-file" name="recipe_picture_url" required>
             </div>
             <button type="submit" class="btn btn-primary">Add the Recipe</button>
         </form>
