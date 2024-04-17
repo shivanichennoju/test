@@ -5,7 +5,6 @@ import boto3
 from config import *
 
 app = Flask(__name__)
-
 bucket = bucket
 region = region
 
@@ -17,17 +16,14 @@ db_conn = connections.Connection(
     db=db
 
 )
-output = {}
 
 @app.route("/", methods=['GET', 'POST'])
 def Mainpage():
     return render_template('AddRecipe.html')
 
-
 @app.route("/about")
 def about():
     return render_template('About.html')
-
 
 @app.route("/addrecipe", methods=['POST'])
 def Add():

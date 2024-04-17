@@ -15,28 +15,43 @@
             color: #333;
             margin: 0;
             padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
         }
 
-        .container {
-            margin-top: 50px;
+        .content {
+            max-width: 800px;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
 
         p {
-            font-size: 16px;
-            line-height: 1.6;
-            font-weight: bold;
+            font-size: 18px; /* Increased font size */
+            line-height: 1.8; /* Improved line spacing */
             color: #333;
+            margin-bottom: 1.5rem;
         }
 
         h1 {
             color: #c2185b;
+            font-size: 2.5rem; /* Increased h1 size for emphasis */
+            margin-bottom: 1.5rem;
         }
 
         .btn-primary {
             background-color: #c2185b;
             border-color: #c2185b;
             color: #fff;
+            padding: 10px 20px; /* Increased padding for a larger button */
+            font-size: 1.2rem; /* Increased font size for button text */
             transition: background-color 0.3s ease;
+            display: inline-block; /* Override default centering */
+            margin-top: 1.5rem;
         }
 
         .btn-primary:hover {
@@ -46,8 +61,8 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1 class="text-center">About Us</h1>
+    <div class="content">
+        <h1>About Us</h1>
         <p>
             Hello and welcome to our Recipe Book! We are excited to share wonderful dishes with you.
             Our objective is to inspire you to produce beautiful dishes in your own kitchen and to enjoy the culinary arts.
@@ -59,7 +74,7 @@
         <p>
             Thank you for joining us on this culinary adventure. Good luck with your cooking!
         </p>
-        <center><a class="btn btn-primary mt-3" href="/">GO TO MAIN</a></center>
+        <a class="btn btn-primary" href="/">GO TO MAIN</a>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
